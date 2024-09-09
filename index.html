@@ -19,6 +19,10 @@
                     console.log('Service worker registration failed:', error);
                 });
 
+            const request = new Request("https://jsonplaceholder.typicode.com/posts", {
+                method: "GET",
+            });
+
             fetch(request)
                 .then((response) => response.json())
                 .then((data) => {
