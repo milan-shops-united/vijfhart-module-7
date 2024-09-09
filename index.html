@@ -8,7 +8,9 @@
     // Check of de browser service workers ondersteunt
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/service-worker.js')
+            navigator.serviceWorker.register('/sw.js', {
+                scope: '/'
+            })
                 .then(registration => {
                     console.log('Service worker registered with scope:', registration.scope);
                 })
